@@ -22,6 +22,23 @@ public class App {
         return HS.size() == HM.values().size();
     }
 
+    public int[] sumZero(int n) {
+        int[] result = new int[n]; 
+        if(n % 2 == 0){
+            for(int i = 0; i< result.length; i+=2){
+                result[i] = i + 1;
+                result[i + 1] = - (i + 1); 
+            }
+        }else{
+            for(int i = 0; i < result.length - 1; i+=2){
+                result[i] = i + 1;
+                result[i + 1] = - (i + 1); 
+            }
+            result[n] = 0;
+        }
+        return result;
+    }
+
     public static  boolean isPowerOfTwo(int n){
         if(n == 1 || n == 2) return true;
         while(n > 0 && n % 2 == 0){
