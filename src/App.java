@@ -31,4 +31,3 @@ public class App {
         return false;
     } 
 }
-// [1,2,2,1,1,3]
