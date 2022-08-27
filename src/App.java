@@ -1,12 +1,30 @@
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
-
+        int[] arr = { 5, -2, 23, 7, 87, -42, 509 };
     }
+
+
+    public static boolean binarySearch(int arr[], int target){
+        int start = 0;
+        int end = arr.length - 1;
+        while(start <= end){
+            int middle = (start + end) /2;
+            if(arr[middle] == target) return true;
+            else if(arr[middle] > target) end = middle - 1; 
+            else if(arr[middle] < target) start = middle + 1; 
+        }
+        return false;
+    }
+
+    //LEET CODE
     public static boolean uniqueOccurrences(int[] arr) {
         HashMap<Integer,Integer> HM = new HashMap<Integer,Integer>();  
         for(int i = 0; i <arr.length; i++){
@@ -22,7 +40,8 @@ public class App {
         return HS.size() == HM.values().size();
     }
 
-    public int[] sumZero(int n) {
+    //LEET CODE
+    public static int[] sumZero(int n) {
         int[] result = new int[n]; 
         if(n % 2 == 0){
             for(int i = 0; i< result.length; i+=2){
@@ -39,6 +58,7 @@ public class App {
         return result;
     }
 
+    //LEET CODE
     public static  boolean isPowerOfTwo(int n){
         if(n == 1 || n == 2) return true;
         while(n > 0 && n % 2 == 0){
