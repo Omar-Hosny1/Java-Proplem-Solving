@@ -11,7 +11,27 @@ public class App {
         int[] arr = { 5, -2, 23, 7, 87, -42, 509 };
     }
 
-
+    public int[] singleNumber(int[] nums) {
+        HashMap<Integer, Integer> HM = new HashMap<Integer, Integer>();
+        for(int i = 0; i < nums.length; i++){
+            if(HM.get(nums[i]) == null){
+                HM.put(nums[i], 1);
+            }else{
+                HM.put(nums[i], HM.get(nums[i]) + 1);
+            }
+        }
+        int result[] = new int[2];
+        int index = 0;
+     for (Map.Entry<Integer, Integer> set :
+             HM.entrySet()) {
+            if(set.getValue() == 1){
+                result[index] = set.getKey(); 
+                index++;
+            }
+        }   
+    return result;
+    }
+    
     public static boolean binarySearch(int arr[], int target){
         int start = 0;
         int end = arr.length - 1;
